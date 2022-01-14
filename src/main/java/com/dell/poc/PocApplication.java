@@ -22,10 +22,10 @@ public class PocApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Produto p1 = new Produto(null, "teste", 20.00);
-		Produto p2 = new Produto(null, "teste", 20.00);
-		Produto p3 = new Produto(null, "teste", 20.00);
-		Produto p4 = new Produto(null, "teste", 20.00);
+		Produto p1 = new Produto(null, "Niro", 36000.00, 10, "SUV");
+		Produto p2 = new Produto(null, "Peugeot", 10000.00, 5, "HAT");
+		Produto p3 = new Produto(null, "CHR", 3000.00, 15, "SUV");
+		Produto p4 = new Produto(null, "Fiesta", 12000.00, 8, "HAT");
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4));
 	}
 

@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dell.poc.download.ExporToExcelDownload;
 import com.dell.poc.download.ProdutoDownload;
 import com.dell.poc.entity.Produto;
 import com.dell.poc.service.ProdutoService;
 
 @RestController
-@RequestMapping(value="/produtos")
-public class ProdutoController {
+@RequestMapping(value="/produtos2")
+public class ProdutoController2 {
 	
 	@Autowired
 	private ProdutoService produtoService;
@@ -32,15 +33,15 @@ public class ProdutoController {
 		return ResponseEntity.ok().body(produtos);
 	}
 	
-	@GetMapping("/export/excel")
+	@GetMapping("/export/excel2")
     public void exportToExcel(HttpServletResponse response) throws IOException {        
          
         List<Produto> listaProdutos = produtoService.findAll();
         
-        List<String> params = Arrays.asList("Produto", "Nome", "", "Quantidade", "", "Drop Down Test");
+        List<String> params = Arrays.asList("Produto", "Nome", "Preço", "Preço", "Categoria");
          
-        ProdutoDownload excelExporter = new ProdutoDownload(listaProdutos, params);
+        //ExporToExcelDownload excelExporter = new ExporToExcelDownload(listaProdutos, params);
          
-        excelExporter.export(response);    
+        //excelExporter.export(response);    
     } 
 }

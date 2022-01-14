@@ -22,6 +22,10 @@ public class Produto implements Serializable {
 	private String nome;
 
 	private Double preco;
+	
+	private int qtde;
+	
+	private String categoria;
 
 	public Produto() {
 		super();
@@ -49,11 +53,13 @@ public class Produto implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
-	public Produto(Long id, String nome, Double preco) {
+	public Produto(Long id, String nome, Double preco, int qtde, String categoria) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
+		this.qtde = qtde;
+		this.categoria = categoria;
 	}
 
 	public Long getId() {
@@ -78,6 +84,22 @@ public class Produto implements Serializable {
 
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+
+	public int getQtde() {
+		return qtde;
+	}
+
+	public void setQtde(int qtde) {
+		this.qtde = qtde;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 }
